@@ -120,7 +120,7 @@ screens = [
                 ),
                 widget.Systray(),
                 widget.Volume(fmt="<u>vol {}</u>", padding=5),
-                widget.Battery(charge_char="+", discharge_char="-", format="<u>bat {char}{percent:2.0%}</u>", padding=5),
+                widget.Battery(format="<u>bat {percent:2.0%}</u>", padding=5),
                 widget.Clock(format="<u>%I:%M %p</u>", padding=5),
             ], 24, border_width=[0, 0, 2, 0]
         )
