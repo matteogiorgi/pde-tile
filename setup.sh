@@ -67,6 +67,8 @@ command pip3 install qtile || error-echo "installing from pip"
 # ---
 store-conf
 QTILE="${HOME}/.config/qtile" && command mkdir -p "${QTILE}"
+command sudo cp "${SCRIPTPATH}/qtile/qtile.desktop" "/usr/share/xsessions/"
+cp "${SCRIPTPATH}/qtile/.xinitrc" "${HOME}/"
 cp "${SCRIPTPATH}/qtile/config.py" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/autostart.sh" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/wallpaper.png" "${QTILE}/"
