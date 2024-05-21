@@ -43,11 +43,13 @@ function store-conf () {
             if [[ -L "$1" ]]; then
                 command unlink "$1"
             else
-                mv "$1" "${RESTORE}"
+                mv "$1" "${RESTORE}/"
             fi
         fi
     }
     RESTORE="${HOME}/.tilerestore" && command mkdir -p "${RESTORE}"
+    command sudo bash -c "$(declare -f backup-conf); backup-conf /usr/share/xsessions/qtile.desktop"
+    backup-conf "${HOME}/.xinitrc"
     backup-conf "${HOME}/.config/qtile/config.py"
     backup-conf "${HOME}/.config/qtile/autostart.sh"
     backup-conf "${HOME}/.config/qtile/wallpaper.png"
