@@ -64,7 +64,8 @@ function store-conf () {
 warning-message
 SCRIPTPATH="$( cd "$(command dirname "$0")" ; pwd -P )" || exit 1
 command sudo apt-get update && sudo apt-get upgrade -qq -y || error-echo "syncing repos"
-command sudo apt-get install -qq -y python3 python3-pip fonts-liberation diodon || error-echo "installing from apt"
+command sudo apt-get install -qq -y python3 python3-pip fonts-liberation network-manager \
+      diodon || error-echo "installing from apt"
 command pip3 install qtile || error-echo "installing from pip"
 # ---
 store-conf

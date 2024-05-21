@@ -121,7 +121,7 @@ screens = [
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Battery(format="bat {percent:2.0%}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Clock(format="%a %d %b - %I:%M %p", padding=10, background="#404040"),
+                widget.Clock(format="%a %d %b - %I:%M %p", padding=10, background="#404040")
             ],
             24, border_width=[3, 0, 3, 0]
         )
