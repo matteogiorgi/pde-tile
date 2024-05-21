@@ -100,7 +100,7 @@ layouts = [
 ]
 
 
-widget_defaults = dict(font="Liberation Mono Bold", fontsize=13, padding=5)
+widget_defaults = dict(font="Fira Code Bold", fontsize=13, padding=5)
 extension_defaults = widget_defaults.copy()
 
 
