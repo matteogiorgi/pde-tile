@@ -15,9 +15,9 @@
 RED='\033[1;36m'
 NC='\033[0m'
 # ---
-if [[ -d "${HOME}/.tilerestore" ]]; then
-    printf "\n${RED}%s${NC}"   "════════ Warning: pde-conf already set ════════"
-    printf "\n${RED}%s${NC}\n" "Remove ~/.tilerestore and run this script again"
+if [[ -d "${HOME}/.pderestore-tile" ]]; then
+    printf "\n${RED}%s${NC}"   "══════════ Warning: pde-conf already set ══════════"
+    printf "\n${RED}%s${NC}\n" "Remove ~/.pderestore-tile and run this script again"
     exit 1
 fi
 # ---
@@ -47,7 +47,7 @@ function store-conf () {
             fi
         fi
     }
-    RESTORE="${HOME}/.tilerestore" && command mkdir -p "${RESTORE}"
+    RESTORE="${HOME}/.pderestore-tile" && command mkdir -p "${RESTORE}"
     command sudo bash -c "$(declare -f backup-conf); backup-conf /usr/share/xsessions/qtile.desktop"
     backup-conf "${HOME}/.xinitrc"
     backup-conf "${HOME}/.config/qtile/config.py"
