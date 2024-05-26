@@ -112,16 +112,18 @@ screens = [
             [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag="True"),
-                widget.Prompt(prompt="> ", foreground="#ffe300"),
                 widget.WindowName(),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
+                widget.Prompt(prompt="> "),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Volume(fmt="vol {}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Battery(format="bat {percent:2.0%}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Clock(format="%a %d %b - %I:%M %p", padding=10, background="#404040")
+                widget.Clock(format="%a %d %b", padding=10, foreground="#ffe300", background="#404040"),
+                widget.Sep(linewidth=5, padding=0, foreground="#000000"),
+                widget.Clock(format="%I:%M %p", padding=10, background="#404040"),
             ],
             24, border_width=[3, 0, 3, 0]
         )
