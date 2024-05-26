@@ -6,6 +6,4 @@
 # https://wiki.debian.org/Xinitrc
 
 
-
-
 exec qtile 2>~/.qtile.err
