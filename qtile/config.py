@@ -112,7 +112,7 @@ screens = [
             [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag="True"),
-                widget.Prompt(prompt="run: ", fmt="<i>{}</i>"),
+                widget.Prompt(prompt="run: ", foreground="#ffe300"),
                 widget.WindowName(),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
                 widget.Systray(),
