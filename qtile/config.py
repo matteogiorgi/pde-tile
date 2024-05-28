@@ -82,7 +82,7 @@ keys = [
 ]
 
 
-groups = [Group(i) for i in "123456789"]
+groups = [Group(i) for i in "1234567890"]
 for i in groups:
     keys.extend(
         [
