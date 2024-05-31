@@ -56,12 +56,13 @@ keys = [
     # ---
     Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     Key([mod], "s", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "w", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "o", lazy.next_layout(), desc="Toggle between layouts"),
     # ---
-    Key([mod], "i", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod], "o", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "i", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+    Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
     # ---
