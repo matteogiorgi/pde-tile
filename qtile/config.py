@@ -76,7 +76,7 @@ keys = [
     # ---
     Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%- unmute"), desc="Low volume"),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+ unmute"), desc="Raise volume"),
-    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master 1+ toggle"), desc="Mute volume"),
+    Key([], "XF86AudioMute", lazy.spawn("amixer set Master 1+ toggle"), desc="Mute volume"),
     Key([], "XF86AudioMicMute", lazy.spawn("amixer set Capture togglemute"), desc="Mute mic"),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 10%-"), desc="Low brightness"),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +10%"), desc="Raise brightness")
@@ -88,9 +88,7 @@ for i in groups:
     keys.extend(
         [
             Key([mod], i.name, lazy.group[i.name].toscreen(), desc="Switch to group {}".format(i.name)),
-            Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name)
-            )
+            Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True), desc="Switch to & move focused window to group {}".format(i.name))
         ]
     )
 
@@ -147,7 +145,7 @@ floats_kept_above = True
 cursor_warp = False
 floating_layout = layout.Floating(
     border_width=3,
-    float_rules=[
+    float_rules = [
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),
         Match(wm_class="makebranch"),
