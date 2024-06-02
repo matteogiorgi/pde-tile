@@ -59,6 +59,7 @@ keys = [
     Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     Key([mod], "s", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "w", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "m", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod], "o", lazy.next_layout(), desc="Toggle between layouts"),
     # ---
     Key([mod], "i", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
