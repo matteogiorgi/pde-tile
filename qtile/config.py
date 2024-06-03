@@ -65,7 +65,7 @@ keys = [
     Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod], "u", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
     Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "o", lazy.next_screen(), desc="Move focus to next monitor"),
+    Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "n", window_to_group("next"), desc="Move window to next group"),
