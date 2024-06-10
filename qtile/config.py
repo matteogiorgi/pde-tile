@@ -95,8 +95,8 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(border_on_single="True", border_width=3, margin=5),
-    layout.Max(only_focused="False", border_width=3, margin=5),
+    layout.Columns(name="Col", border_on_single="True", border_width=3, margin=5),
+    layout.Max(name="Max", only_focused="False", border_width=3, margin=5),
 ]
 
 
@@ -113,13 +113,13 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag="True"),
                 widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#ff0000"),
-                widget.WindowName(),
+                widget.WindowName(max_chars=50),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Volume(fmt="vol {}", padding=10, background="#404040"),
+                widget.Volume(fmt="Vol {}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Battery(format="bat {percent:2.0%}", padding=10, background="#404040"),
+                widget.Battery(format="Bat {percent:2.0%}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Clock(format="%a %d %b", padding=10, foreground="#ffe300", background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
