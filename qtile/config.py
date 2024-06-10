@@ -95,8 +95,8 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(name="Col", border_on_single="True", border_width=3, margin=5),
-    layout.Max(name="Max", only_focused="False", border_width=3, margin=5),
+    layout.Columns(border_on_single="True", border_width=3, margin=5),
+    layout.Max(only_focused="False", border_width=3, margin=5),
 ]
 
 
