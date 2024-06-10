@@ -53,7 +53,7 @@ function store-conf () {
     backup-conf "${HOME}/.config/qtile/config.py"
     backup-conf "${HOME}/.config/qtile/autostart.sh"
     backup-conf "${HOME}/.config/qtile/wallpaper"
-    backup-conf "${HOME}/.config/qtile/autumn.jpeg"
+    backup-conf "${HOME}/.config/qtile/winter.jpg"
 }
 
 
@@ -76,7 +76,7 @@ cp "${SCRIPTPATH}/qtile/.xinitrc" "${HOME}/"
 cp "${SCRIPTPATH}/qtile/config.py" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/autostart.sh" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/wallpaper" "${QTILE}/"
-cp "${SCRIPTPATH}/qtile/autumn.jpeg" "${QTILE}/"
+cp "${SCRIPTPATH}/qtile/winter.jpg" "${QTILE}/"
 
 
 
