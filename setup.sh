@@ -52,7 +52,7 @@ function store-conf () {
     backup-conf "${HOME}/.xinitrc"
     backup-conf "${HOME}/.config/qtile/config.py"
     backup-conf "${HOME}/.config/qtile/autostart.sh"
-    backup-conf "${HOME}/.config/qtile/winter.jpg"
+    backup-conf "${HOME}/.config/qtile/debian.png"
     backup-conf "${HOME}/.config/qtile/wallpaper"
 }
 
@@ -75,8 +75,8 @@ command sudo cp "${SCRIPTPATH}/qtile/qtile.desktop" "/usr/share/xsessions/"
 cp "${SCRIPTPATH}/qtile/.xinitrc" "${HOME}/"
 cp "${SCRIPTPATH}/qtile/config.py" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/autostart.sh" "${QTILE}/"
-cp "${SCRIPTPATH}/qtile/winter.jpg" "${QTILE}/"
-ln -sr "${QTILE}/winter.jpg" "${QTILE}/wallpaper"
+cp "${SCRIPTPATH}/qtile/debian.png" "${QTILE}/"
+ln -sr "${QTILE}/debian.png" "${QTILE}/wallpaper"
 
 
 
