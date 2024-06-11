@@ -1,6 +1,6 @@
 # ~/.config/qtile/config.py: executed when X11 starts.
 # See https://docs.qtile.org/en/latest/manual/config/default.html
-# for the default version.
+# for the default version Qtile writes automatically.
 # ---
 # Qtile - https://qtile.org/
 
