@@ -120,7 +120,7 @@ screens = [
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Volume(fmt="Vol {}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Battery(format="Bat {percent:2.0%}", padding=10, background="#404040"),
+                widget.Battery(format="Bat {char}{percent:2.0%}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Clock(format="%a %d %b", padding=10, foreground="#ffe300", background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
