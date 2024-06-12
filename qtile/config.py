@@ -54,8 +54,7 @@ keys = [
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     # ---
-    Key([mod], "space", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "space", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     # ---
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
@@ -66,6 +65,7 @@ keys = [
     Key([mod], "u", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
     Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
+    Key([mod], "o", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "q", lazy.spawn("/usr/bin/diodon"), desc="Launch clipboard manager"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
