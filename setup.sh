@@ -54,6 +54,7 @@ function store-conf () {
     backup-conf "${HOME}/.config/qtile/autostart.sh"
     backup-conf "${HOME}/.config/qtile/debian.png"
     backup-conf "${HOME}/.config/qtile/wallpaper"
+    rm -rf "${HOME}/.config/qtile"
 }
 
 
