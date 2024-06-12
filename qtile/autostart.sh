@@ -13,5 +13,5 @@
 
 command nm-applet &
 command diodon &
-command ulauncher --hide-window --no-window-shadow
+command ulauncher --hide-window --no-window-shadow &
 command setxkbmap us -option "caps:swapescape"
