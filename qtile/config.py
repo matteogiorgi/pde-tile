@@ -98,8 +98,8 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(border_on_single="True", border_width=3, margin=5),
-    layout.Max(only_focused="False", border_width=3, margin=5),
+    layout.Columns(border_on_single=True, border_width=3, margin=5),
+    layout.Max(only_focused=False, border_width=3, margin=5),
 ]
 
 
@@ -114,7 +114,7 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(scale=0.7),
-                widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag="True"),
+                widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag=True),
                 widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff"),
                 widget.WindowName(max_chars=50),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
