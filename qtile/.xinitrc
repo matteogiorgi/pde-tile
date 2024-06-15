@@ -7,4 +7,5 @@
 
 
 xsettingsd &
+command xrdb -load ~/.Xresources &
 exec qtile 2>~/.qtile.err
