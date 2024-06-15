@@ -6,4 +6,5 @@
 # https://wiki.debian.org/Xinitrc
 
 
+xsettingsd &
 exec qtile 2>~/.qtile.err
