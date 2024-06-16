@@ -68,7 +68,7 @@ keys = [
     Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "o", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "z", lazy.spawn("/usr/bin/diodon"), desc="Launch clipboard manager"),
+    Key([mod], "c", lazy.spawn("/usr/bin/diodon"), desc="Launch clipboard manager"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "n", window_to_group("next"), desc="Move window to next group"),
