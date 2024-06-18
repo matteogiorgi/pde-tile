@@ -11,6 +11,7 @@
 
 
 
+command lxpolkit &
 command nm-applet &
 command diodon &
 command ulauncher --hide-window --no-window-shadow &
