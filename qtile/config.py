@@ -60,17 +60,17 @@ keys = [
     # ---
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
-    Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
-    Key([mod], "s", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
+    Key([mod], "a", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "s", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod], "u", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "u", lazy.next_screen(), desc="Move focus to next monitor"),
+    Key([mod], "i", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "o", lazy.layout.next(), desc="Move window focus to other window"),
-    Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
+    Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "shift"], "n", window_to_group("next"), desc="Move window to next group"),
@@ -101,6 +101,7 @@ for i in groups:
 
 layouts = [
     layout.Columns(border_on_single=True, border_width=3, margin=5),
+    layout.Floating(border_width=3),
     layout.Max(only_focused=False, border_width=3, margin=5),
 ]
 
