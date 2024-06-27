@@ -112,7 +112,7 @@ layouts = [
 ]
 
 
-widget_defaults = dict(font="Fira Code Bold", fontsize=13, padding=5)
+widget_defaults = dict(font="Fira Code SemiBold", fontsize=13, padding=5)
 extension_defaults = widget_defaults.copy()
 
 
@@ -123,7 +123,8 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayoutIcon(scale=0.7),
-                widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag=True),
+                widget.GroupBox(highlight_method="line", highlight_color="#202020", rounded=False, disable_drag=True),
+                widget.Sep(linewidth=2, padding=0, foreground="#000000"),
                 widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff"),
                 widget.TaskList(max_title_width=200, icon_size=0, margin=0, padding_x=10, padding_y=4, rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
                     mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()},
