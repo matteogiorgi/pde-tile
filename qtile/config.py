@@ -10,7 +10,7 @@
 import os
 import subprocess
 from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import Click, Drag, Group, Key, Match, Screen, KeyChord
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
@@ -60,13 +60,19 @@ keys = [
     # ---
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
-    Key([mod], "a", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "s", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    KeyChord([mod], "a", [
+            Key([], "a", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+            Key([], "s", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
+            Key([], "d", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+        ],
+        name="Window mode"
+    ),
+    Key([mod], "s", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
     Key([mod], "u", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod], "i", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "o", lazy.layout.next(), desc="Move window focus to other window"),
+    Key([mod], "o", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
@@ -119,7 +125,7 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag=True),
                 widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff"),
-                widget.WindowName(max_chars=50),
+                widget.TaskList(max_title_width=250, icon_size=0, margin=0, padding=4, highlight_method="block", unfocused_border="#202020"),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
