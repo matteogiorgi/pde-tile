@@ -125,7 +125,7 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", disable_drag=True),
                 widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff"),
-                widget.TaskList(max_title_width=250, icon_size=0, margin=0, padding=4, rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
+                widget.TaskList(max_title_width=200, icon_size=0, margin=0, padding=4,, padding_10=10 rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
                     mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()},
                 ),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
