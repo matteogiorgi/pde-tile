@@ -65,7 +65,7 @@ keys = [
             Key([], "s", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
             Key([], "d", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
         ],
-        name="Window mode"
+        name="window mode"
     ),
     Key([mod], "s", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
@@ -125,10 +125,10 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", rounded=False, disable_drag=True),
                 widget.Sep(linewidth=2, padding=0, foreground="#000000"),
-                widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff"),
                 widget.TaskList(max_title_width=200, icon_size=0, margin=0, padding_x=10, padding_y=4, rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
-                    mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()},
+                    mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()}
                 ),
+                widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
@@ -139,6 +139,8 @@ screens = [
                 widget.Clock(format="%a %d %b", padding=10, foreground="#ffe300", background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Clock(format="%I:%M %p", padding=10, background="#404040"),
+                widget.Sep(linewidth=5, padding=0, foreground="#000000"),
+                widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff")
             ],
             24, border_width=[5, 0, 5, 0]
         )
