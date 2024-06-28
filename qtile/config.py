@@ -130,17 +130,16 @@ screens = [
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
+                widget.Prompt(prompt="> ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Volume(fmt="Vol {}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Battery(format="Bat {char}{percent:2.0%}", padding=10, background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Clock(format="%a %d %b", padding=10, foreground="#ffe300", background="#404040"),
+                widget.Clock(format="%a %d %b", padding=10, foreground="#ffff00", background="#404040"),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Clock(format="%I:%M %p", padding=10, background="#404040"),
-                widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Prompt(prompt="> ", padding=10, foreground="#000000", background="#ffe300", cursor_color="#0000ff")
+                widget.Clock(format="%I:%M %p", padding=10, background="#404040")
             ],
             24, border_width=[5, 0, 5, 0]
         )
