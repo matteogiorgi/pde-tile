@@ -129,8 +129,8 @@ screens = [
                     mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Chord(chords_colors={"launch": ("#ff0000", "#ffffff")}, name_transform=lambda name: name.upper()),
-                widget.Prompt(prompt="> ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
+                widget.Chord(chords_colors={"window mode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
+                widget.Prompt(prompt="RUN: ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Volume(fmt="Vol {}", padding=10, background="#404040"),
