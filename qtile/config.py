@@ -60,19 +60,19 @@ keys = [
     # ---
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
-    KeyChord([mod], "a", [
-            Key([], "a", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-            Key([], "s", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
-            Key([], "d", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
-        ],
-        name="window mode"
-    ),
+    Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod], "s", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "u", lazy.next_screen(), desc="Move focus to next monitor"),
-    Key([mod], "i", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "o", lazy.next_layout(), desc="Toggle between layouts"),
+    KeyChord([mod], "u", [
+            Key([mod], "u", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+            Key([mod], "i", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
+            Key([mod], "o", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+        ],
+        name="window mode"
+    ),
+    Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
@@ -156,7 +156,7 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 floats_kept_above = True
 cursor_warp = True
