@@ -126,7 +126,7 @@ screens = [
                 widget.GroupBox(highlight_method="line", highlight_color="#202020", rounded=False, disable_drag=True),
                 widget.Sep(linewidth=2, padding=0, foreground="#000000"),
                 widget.TaskList(max_title_width=200, icon_size=0, margin=0, padding_x=10, padding_y=4, rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
-                    mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()}
+                    mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
@@ -152,7 +152,7 @@ screens = [
                 widget.CurrentLayoutIcon(scale=0.7),
                 widget.Sep(linewidth=2, padding=0, foreground="#000000"),
                 widget.TaskList(max_title_width=200, icon_size=0, margin=0, padding_x=10, padding_y=4, rounded=False, spacing=5, highlight_method="block", unfocused_border="#202020",
-                    mouse_callbacks={"Button1": lazy.window.toggle_minimize(), "Button3": lazy.window.toggle_maximize(), "Button2": lazy.window.kill()}
+                    mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
