@@ -71,8 +71,15 @@ keys = [
         ],
         name="winmode"
     ),
-    Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
+    KeyChord([mod], "i", [
+            Key([mod], "u", lazy.group.setlayout("columns"), desc="Set columns layout"),
+            Key([mod], "i", lazy.group.setlayout("floating"), desc="Set floating layout"),
+            Key([mod], "o", lazy.group.setlayout("max"), desc="Set max layout")
+        ],
+        name="layoutmode"
+    ),
     Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
+    Key([mod], "z", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
@@ -106,9 +113,9 @@ for i in groups:
 
 
 layouts = [
-    layout.Columns(border_on_single=True, border_width=3, margin=5),
-    layout.Floating(border_width=3),
-    layout.Max(only_focused=False, border_width=3, margin=5),
+    layout.Columns(name="columns", border_on_single=True, border_width=3, margin=5),
+    layout.Floating(name="floating", border_width=3),
+    layout.Max(name="max", only_focused=False, border_width=3, margin=5),
 ]
 
 
@@ -129,7 +136,7 @@ screens = [
                     mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
+                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff"), "layoutmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
                 widget.Prompt(prompt="RUN: ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
