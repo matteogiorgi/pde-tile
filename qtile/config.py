@@ -162,7 +162,7 @@ screens = [
                     mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
+                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff"), "layoutmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.AGroupBox(fmt="Group {}", borderwidth=0, padding=0, margin_x=10, margin_y=3, background="#404040")
             ],
