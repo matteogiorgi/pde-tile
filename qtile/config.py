@@ -83,6 +83,7 @@ keys = [
     Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
+    Key([mod], "b", lazy.spawn("pcmanfm"), desc="Launch PCManFM"),
     Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
