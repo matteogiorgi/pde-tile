@@ -6,6 +6,6 @@
 # https://wiki.debian.org/Xinitrc
 
 
-xsettingsd &
+command xsettingsd &
 command xrdb -load ~/.Xresources &
 exec qtile 2>~/.qtile.err
