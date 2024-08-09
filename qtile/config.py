@@ -59,16 +59,16 @@ keys = [
     Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     # ---
     KeyChord([mod], "q", [
-            Key([], "1", lazy.group.setlayout("columns"), desc="Set columns layout"),
-            Key([], "2", lazy.group.setlayout("floating"), desc="Set floating layout"),
-            Key([], "3", lazy.group.setlayout("max"), desc="Set max layout")
+            Key([mod], "i", lazy.group.setlayout("columns"), desc="Set columns layout"),
+            Key([mod], "o", lazy.group.setlayout("floating"), desc="Set floating layout"),
+            Key([mod], "p", lazy.group.setlayout("max"), desc="Set max layout")
         ],
         name="layoutmode"
     ),
     KeyChord([mod], "w", [
-            Key([], "1", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-            Key([], "2", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
-            Key([], "3", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+            Key([mod], "i", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+            Key([mod], "o", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
+            Key([mod], "p", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
         ],
         name="winmode"
     ),
