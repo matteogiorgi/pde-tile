@@ -58,29 +58,31 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     # ---
+    KeyChord([mod], "q", [
+            Key([], "1", lazy.group.setlayout("columns"), desc="Set columns layout"),
+            Key([], "2", lazy.group.setlayout("floating"), desc="Set floating layout"),
+            Key([], "3", lazy.group.setlayout("max"), desc="Set max layout")
+        ],
+        name="layoutmode"
+    ),
+    KeyChord([mod], "w", [
+            Key([], "1", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+            Key([], "2", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
+            Key([], "3", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+        ],
+        name="winmode"
+    ),
+    Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
     Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
     Key([mod], "s", lazy.layout.next(), desc="Move window focus to other window"),
     Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    KeyChord([mod], "u", [
-            Key([mod], "u", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-            Key([mod], "i", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
-            Key([mod], "o", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
-        ],
-        name="winmode"
-    ),
-    KeyChord([mod], "i", [
-            Key([mod], "u", lazy.group.setlayout("columns"), desc="Set columns layout"),
-            Key([mod], "i", lazy.group.setlayout("floating"), desc="Set floating layout"),
-            Key([mod], "o", lazy.group.setlayout("max"), desc="Set max layout")
-        ],
-        name="layoutmode"
-    ),
-    Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
-    Key([mod], "z", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
+    Key([mod], "g", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
+    Key([mod], "z", lazy.spawn("diodon"), desc="Launch Diodon"),
+    Key([mod], "x", lazy.spawn("firefox"), desc="Launch Firefox"),
     Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
     Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
     Key([mod], "b", lazy.spawn("pcmanfm"), desc="Launch PCManFM"),
