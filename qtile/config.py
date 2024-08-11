@@ -58,34 +58,26 @@ keys = [
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "Tab", lazy.screen.toggle_group(), desc="Last active group"),
     # ---
-    KeyChord([mod], "q", [
-            Key([mod], "i", lazy.group.setlayout("columns"), desc="Set columns layout"),
-            Key([mod], "o", lazy.group.setlayout("floating"), desc="Set floating layout"),
-            Key([mod], "p", lazy.group.setlayout("max"), desc="Set max layout")
-        ],
-        name="layoutmode"
-    ),
-    KeyChord([mod], "w", [
-            Key([mod], "i", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-            Key([mod], "o", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
-            Key([mod], "p", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+    KeyChord([mod], "u", [
+            Key([mod], "u", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
+            Key([mod], "i", lazy.window.toggle_maximize(), desc="Toggle maximize on the focused window"),
+            Key([mod], "o", lazy.window.toggle_minimize(), desc="Toggle minimize on the focused window"),
+            Key([mod], "p", lazy.window.toggle_floating(), desc="Toggle floating on the focused window")
         ],
         name="winmode"
     ),
-    Key([mod], "i", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "n", lazy.screen.next_group(), desc="Move focus to next group"),
     Key([mod], "p", lazy.screen.prev_group(), desc="Move focus to previews group"),
+    Key([mod], "i", lazy.next_layout(), desc="Move to next layout"),
+    Key([mod], "o", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "a", lazy.next_screen(), desc="Move focus to next monitor"),
-    Key([mod], "s", lazy.layout.next(), desc="Move window focus to other window"),
-    Key([mod], "d", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-    Key([mod], "f", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen on the focused window"),
-    Key([mod], "g", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
-    Key([mod], "z", lazy.spawn("diodon"), desc="Launch Diodon"),
-    Key([mod], "x", lazy.spawn("firefox"), desc="Launch Firefox"),
-    Key([mod], "c", lazy.spawn("code"), desc="Launch VSCode"),
-    Key([mod], "v", lazy.spawn("gvim"), desc="Launch GVim"),
-    Key([mod], "b", lazy.spawn("pcmanfm"), desc="Launch PCManFM"),
+    Key([mod], "s", lazy.group.next_window(), desc="Move window focus to next window"),
+    Key([mod], "d", lazy.group.focus_back(), desc="Move window focus to last window"),
+    Key([mod], "f", lazy.spawn("/usr/bin/pcmanfm"), desc="Launch PCManFM"),
+    Key([mod], "x", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
+    Key([mod], "c", lazy.spawn("/usr/bin/code"), desc="Launch VSCode"),
+    Key([mod], "v", lazy.spawn("/usr/bin/gvim"), desc="Launch GVim"),
+    Key([mod], "b", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -117,7 +109,6 @@ for i in groups:
 
 layouts = [
     layout.Columns(name="columns", border_on_single=True, border_width=3, margin=5),
-    layout.Floating(name="floating", border_width=3),
     layout.Max(name="max", only_focused=False, border_width=3, margin=5),
 ]
 
@@ -139,7 +130,7 @@ screens = [
                     mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff"), "layoutmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
+                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
                 widget.Prompt(prompt="RUN: ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
@@ -165,7 +156,7 @@ screens = [
                     mouse_callbacks={"Button1": lazy.window.toggle_maximize(), "Button3": lazy.window.toggle_minimize(), "Button2": lazy.window.kill()}
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
-                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff"), "layoutmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
+                widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.AGroupBox(fmt="Group {}", borderwidth=0, padding=0, margin_x=10, margin_y=3, background="#404040")
             ],
@@ -178,13 +169,13 @@ screens = [
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
+    Click([mod], "Button2", lazy.window.toggle_floating())
 ]
 
 
 dgroups_key_binder = None
 dgroups_app_rules = []
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 floats_kept_above = True
 cursor_warp = True
