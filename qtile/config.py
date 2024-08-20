@@ -74,10 +74,9 @@ keys = [
     Key([mod], "s", lazy.group.next_window(), desc="Move window focus to next window"),
     Key([mod], "d", lazy.group.focus_back(), desc="Move window focus to last window"),
     Key([mod], "f", lazy.spawn("/usr/bin/pcmanfm"), desc="Launch PCManFM"),
-    Key([mod], "x", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "c", lazy.spawn("/usr/bin/diodon"), desc="Launch Diodon"),
     Key([mod], "v", lazy.spawn("/usr/bin/gvim"), desc="Launch GVim"),
-    Key([mod], "b", lazy.spawn("/usr/bin/firefox"), desc="Launch Firefox"),
+    Key([mod], "b", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
     Key([mod], "m", lazy.spawn(terminal), desc="Launch terminal"),
     # ---
     Key([mod, "shift"], "q", lazy.window.kill(), desc="Kill focused window"),

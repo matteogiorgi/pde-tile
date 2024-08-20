@@ -14,5 +14,6 @@
 command lxpolkit &
 command nm-applet &
 command diodon &
+command pcmanfm -d &
 command ulauncher --hide-window --no-window-shadow &
 command setxkbmap us -option "caps:swapescape"
