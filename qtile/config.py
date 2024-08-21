@@ -130,7 +130,7 @@ screens = [
                 ),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Chord(chords_colors={"winmode": ("#000000", "#00ffff")}, name_transform=lambda name: name.upper()),
-                widget.Prompt(prompt="CMD: ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
+                widget.Prompt(prompt="CMD ", padding=5, foreground="#00ffff", cursor_color="#ffffff"),
                 widget.Systray(),
                 widget.Sep(linewidth=5, padding=0, foreground="#000000"),
                 widget.Volume(fmt="Vol {}", padding=10, background="#404040"),
