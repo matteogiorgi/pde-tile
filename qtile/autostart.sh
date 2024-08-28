@@ -21,7 +21,6 @@ command flameshot &
 command pcmanfm -d &
 command nitrogen --restore &
 command ulauncher --hide-window --no-window-shadow &
-command setxkbmap us -option "caps:swapescape"
 
 
 
@@ -33,11 +32,15 @@ SCREEN1_ID="eDP-1"
 SCREEN2_ID="HDMI-1"
 SCREEN2_POSITION="--right-of"
 SCREEN2_RATIO="1024x768"
+KEY_LAYOUT="us"
+KEY_OPTIONS="caps:swapescape"
 TOUCH_ID=$(xinput --list --name-only | grep -Eo '.*'"[Tt]ouch[Pp]ad"'.*' | head -n 1)
+TOUCH_STATUS="enable"
 WACOM_ID=$(xinput --list --name-only | grep -Eo '.*'"[Ww][Aa][Cc][Oo][Mm].*[Ss]tylus"'.*' | head -n 1)
 WACOM_ROTATION="half"
 # ---
-command xinput disable "$TOUCH_ID"
+command setxkbmap "$KEY_LAYOUT" -option "$KEY_OPTIONS"
+command xinput "$TOUCH_STATUS" "$TOUCH_ID"
 command xsetwacom set "$WACOM_ID" rotate "$WACOM_ROTATION"
 if xrandr | grep "$SCREEN1_ID" | grep "$SCREEN2_ID"; then
     command xrandr --output "$SCREEN2_ID" --mode "$SCREEN2_RATIO" "$SCREEN2_POSITION" "$SCREEN1_ID"
