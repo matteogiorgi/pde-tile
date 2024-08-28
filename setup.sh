@@ -55,7 +55,7 @@ function store-conf () {
     backup-conf "${HOME}/.Xdefaults"
     backup-conf "${HOME}/.config/qtile/config.py"
     backup-conf "${HOME}/.config/qtile/autostart.sh"
-    backup-conf "${HOME}/.config/qtile/debian.png"
+    backup-conf "${HOME}/.config/qtile/pde.png"
     backup-conf "${HOME}/.config/qtile/wallpaper"
     rm -rf "${HOME}/.config/qtile"
 }
@@ -83,8 +83,8 @@ cp "${SCRIPTPATH}/qtile/.Xresources" "${HOME}/"
 cp "${SCRIPTPATH}/qtile/.Xdefaults" "${HOME}/"
 cp "${SCRIPTPATH}/qtile/config.py" "${QTILE}/"
 cp "${SCRIPTPATH}/qtile/autostart.sh" "${QTILE}/"
-cp "${SCRIPTPATH}/qtile/debian.png" "${QTILE}/"
-ln -sr "${QTILE}/debian.png" "${QTILE}/wallpaper"
+cp "${SCRIPTPATH}/qtile/pde.png" "${QTILE}/"
+ln -sr "${QTILE}/pde.png" "${QTILE}/wallpaper"
 
 
 
