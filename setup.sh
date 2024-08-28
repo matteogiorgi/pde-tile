@@ -69,8 +69,8 @@ function store-conf () {
 warning-message
 SCRIPTPATH="$( cd "$(command dirname "$0")" ; pwd -P )" || exit 1
 command sudo apt-get update && sudo apt-get upgrade -qq -y || error-echo "syncing repos"
-command sudo apt-get install -qq -y python3 python3-pip fonts-firacode network-manager diodon flameshot htop \
-      lxpolkit lxterminal lxappearance pavucontrol arandr pcmanfm xarchiver xournalpp firefox nitrogen gparted \
+command sudo apt-get install -qq -y python3 python3-pip fonts-firacode network-manager diodon flameshot htop qt5ct \
+      lxpolkit lxterminal lxappearance pavucontrol arandr pcmanfm xarchiver xournalpp firefox vlc nitrogen gparted \
       xsettingsd libwacom9 xserver-xorg-input-wacom adwaita-icon-theme-full || error-echo "installing from apt"
 command pip3 install qtile || error-echo "installing from pip"
 # ---
